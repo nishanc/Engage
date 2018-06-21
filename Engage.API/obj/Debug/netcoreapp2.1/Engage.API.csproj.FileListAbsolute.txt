@@ -1,0 +1,14 @@
+/home/nishan/Documents/Developer/Engage/Engage.API/bin/Debug/netcoreapp2.1/Engage.API.deps.json
+/home/nishan/Documents/Developer/Engage/Engage.API/bin/Debug/netcoreapp2.1/Engage.API.runtimeconfig.json
+/home/nishan/Documents/Developer/Engage/Engage.API/bin/Debug/netcoreapp2.1/Engage.API.runtimeconfig.dev.json
+/home/nishan/Documents/Developer/Engage/Engage.API/bin/Debug/netcoreapp2.1/Engage.API.dll
+/home/nishan/Documents/Developer/Engage/Engage.API/bin/Debug/netcoreapp2.1/Engage.API.pdb
+/home/nishan/Documents/Developer/Engage/Engage.API/obj/Debug/netcoreapp2.1/Engage.API.csprojAssemblyReference.cache
+/home/nishan/Documents/Developer/Engage/Engage.API/obj/Debug/netcoreapp2.1/Engage.API.csproj.CoreCompileInputs.cache
+/home/nishan/Documents/Developer/Engage/Engage.API/obj/Debug/netcoreapp2.1/Engage.API.RazorAssemblyInfo.cache
+/home/nishan/Documents/Developer/Engage/Engage.API/obj/Debug/netcoreapp2.1/Engage.API.RazorAssemblyInfo.cs
+/home/nishan/Documents/Developer/Engage/Engage.API/obj/Debug/netcoreapp2.1/Engage.API.AssemblyInfoInputs.cache
+/home/nishan/Documents/Developer/Engage/Engage.API/obj/Debug/netcoreapp2.1/Engage.API.AssemblyInfo.cs
+/home/nishan/Documents/Developer/Engage/Engage.API/obj/Debug/netcoreapp2.1/Engage.API.RazorTargetAssemblyInfo.cache
+/home/nishan/Documents/Developer/Engage/Engage.API/obj/Debug/netcoreapp2.1/Engage.API.dll
+/home/nishan/Documents/Developer/Engage/Engage.API/obj/Debug/netcoreapp2.1/Engage.API.pdb
