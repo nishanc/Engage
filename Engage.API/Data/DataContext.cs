@@ -8,5 +8,6 @@ namespace Engage.API.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options){} //DataContext a type and passs to base constructor
 
         public DbSet<Value> Values { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
