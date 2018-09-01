@@ -21,6 +21,8 @@ namespace Engage.API.Data
 
             if(!VerifyPassword(password, user.PasswordHash,user.PasswordSalt))
                 return null;
+            // auth successful
+            return user;
         }
 
         private bool VerifyPassword(string password, byte[] passwordHash, byte[] passwordSalt)
