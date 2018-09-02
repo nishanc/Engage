@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,8 @@ import { NavComponent } from './nav/nav.component';
    ],
    imports: [
       BrowserModule,
-      HttpModule
+      HttpModule,
+      FormsModule
    ],
    providers: [],
    bootstrap: [
