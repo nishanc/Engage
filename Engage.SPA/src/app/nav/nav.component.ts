@@ -21,13 +21,13 @@ export class NavComponent implements OnInit {
     });
   }
 
-  logout(){
+  logout() {
     this.authService.userToken = null;
     localStorage.removeItem('token');
     console.log('logged out');
   }
 
-  loggedIn(){
+  loggedIn() {
     const token = localStorage.getItem('token');
     return !!token;
   }
