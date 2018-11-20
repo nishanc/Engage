@@ -16,7 +16,7 @@ values: any;
   }
 
   registerToggle() {
-    this.registerMode = !this.registerMode;
+    this.registerMode = true;
   }
 
   getValues() {
@@ -24,5 +24,8 @@ values: any;
       // console.log(response);
       this.values = response.json();
     });
+  }
+  cancelRegisterMode(registerMode: boolean) {
+    this.registerMode = registerMode;
   }
 }
