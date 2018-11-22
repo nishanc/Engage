@@ -26,6 +26,6 @@ model: any = {};
 
   cancel() {
     this.cancelRegister.emit(false);
-    console.log('cancelled');
+    console.log('Cancelled');
   }
 }

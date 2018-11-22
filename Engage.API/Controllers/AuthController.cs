@@ -21,6 +21,7 @@ namespace Engage.API.Controllers
     [Route("api/[controller]")]
     public class AuthController : Controller
     {
+
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
         public AuthController(IAuthRepository repo, IConfiguration config)
@@ -33,8 +34,8 @@ namespace Engage.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserForRegisterDto userForRegisterDto)
         {
-
-            userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
+            if(!string.IsNullOrEmpty(userForRegisterDto.Username))
+                userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
 
             if (await _repo.UserExists(userForRegisterDto.Username))
                 ModelState.AddModelError("Username", "Username already exists");
@@ -57,6 +58,7 @@ namespace Engage.API.Controllers
         public async Task<IActionResult> Login([FromBody] UserForLoginDto userForRegisterDto)
         {
 
+            throw new Exception("Computer says no");
             var userFromRepo = await _repo.Login(userForRegisterDto.Username.ToLower(), userForRegisterDto.Password);
             if (userFromRepo == null)
                 return Unauthorized();
@@ -78,6 +80,7 @@ namespace Engage.API.Controllers
             var tokenString = tokenHandler.WriteToken(token);
 
             return Ok(new { tokenString });
+            
         }
     }
 }
