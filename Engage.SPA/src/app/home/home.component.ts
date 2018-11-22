@@ -12,19 +12,19 @@ values: any;
   constructor(private http: Http) { }
 
   ngOnInit() {
-    this.getValues();
+    // this.getValues();
   }
 
   registerToggle() {
     this.registerMode = true;
   }
 
-  getValues() {
-    this.http.get('http://localhost:5000/api/values').subscribe(response => {
-      // console.log(response);
-      this.values = response.json();
-    });
-  }
+  // getValues() {
+  //   this.http.get('http://localhost:5000/api/values').subscribe(response => {
+  //     // console.log(response);
+  //     this.values = response.json();
+  //   });
+  // }
   cancelRegisterMode(registerMode: boolean) {
     this.registerMode = registerMode;
   }
