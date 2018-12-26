@@ -32,7 +32,7 @@ constructor(private http: Http) { }
         return this.http.post(this.baseUrl + 'register', model, this.requesstOptions()).catch(this.handleError);
     }
 
-    loogedIn() {
+    loggedIn() {
         return tokenNotExpired('token');
     }
     private requesstOptions() {
