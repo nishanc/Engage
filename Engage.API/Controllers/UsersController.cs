@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using Engage.API.Data;
@@ -33,6 +35,28 @@ namespace Engage.API.Controllers
             var user = await _repo.GetUser(id);
             var userToReturn = _mapper.Map<UserForDetailedDto>(user);
             return Ok(userToReturn);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateUser(int id, [FromBody] UserForUpdateDto userForUpdateDto){
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var userFromRepo = await _repo.GetUser(id);
+            if (userFromRepo == null)
+                return NotFound($"Could not find user with an ID of {id}");
+
+            if(currentUserId != userFromRepo.Id)
+                return Unauthorized();
+
+            _mapper.Map(userForUpdateDto, userFromRepo);
+
+            if (await _repo.SaveAll())
+                return NoContent();
+
+            throw new Exception($"Updating user {id} failed on save.");
+            
         }
     }
 }
