@@ -48,14 +48,18 @@ namespace Engage.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var userToCreate = new User
-            {
-                Username = userForRegisterDto.Username
-            };
+            // var userToCreate = new User
+            // {
+            //     Username = userForRegisterDto.Username
+            // };
+
+            var userToCreate = _mapper.Map<User>(userForRegisterDto);
 
             var createUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
 
-            return StatusCode(201);
+            var userToReturn =  _mapper.Map<UserForDetailedDto>(createUser);
+            //return StatusCode(201);
+            return CreatedAtRoute("GetUser", new {controller = "Users", id = createUser.Id}, userToReturn);
         }
 
         [HttpPost("login")]

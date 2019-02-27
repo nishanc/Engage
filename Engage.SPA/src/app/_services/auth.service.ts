@@ -35,13 +35,17 @@ constructor(private http: Http) { }
                 this.currentUser = user.user;
                 // console.log(this.decodedToken);
                 this.userToken = user.tokenString;
-                this.changeMemberPhoto(this.currentUser.photoUrl);
+                if (this.currentUser.photoUrl !== null) {
+                    this.changeMemberPhoto(this.currentUser.photoUrl);
+                } else {
+                    this.changeMemberPhoto('../../assets/user.png');
+                }
             }
         }).catch(this.handleError);
     }
 
-    register(model: any) {
-        return this.http.post(this.baseUrl + 'register', model, this.requestOptions()).catch(this.handleError);
+    register(user: User) {
+        return this.http.post(this.baseUrl + 'register', user, this.requestOptions()).catch(this.handleError);
     }
 
     loggedIn() {
