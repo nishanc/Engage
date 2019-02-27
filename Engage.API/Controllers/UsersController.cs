@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Engage.API.Data;
 using Engage.API.Dtos;
+using Engage.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Engage.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     public class UsersController: Controller
