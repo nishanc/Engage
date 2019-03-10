@@ -15,7 +15,7 @@ export class UserService {
 
 constructor( private authHttp: AuthHttp) { }
 
-    getUsers(page?: number, itemsPerPage?: number): Observable<User[]> {
+    getUsers(page?: number, itemsPerPage?: number) {
         const paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
         let queryString = '?';
         if (page != null && itemsPerPage != null) {
