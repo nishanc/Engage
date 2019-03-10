@@ -52,7 +52,7 @@ namespace Engage.API.Data
                 users = users.Where(u => u.DateOfBirth.CalculateAge() >= userParams.MinAge
                 && u.DateOfBirth.CalculateAge() <= userParams.MaxAge);
             }
-            if (string.IsNullOrEmpty(userParams.OrderBy)) {
+            if (!string.IsNullOrEmpty(userParams.OrderBy)) {
                 switch (userParams.OrderBy) {
                     case "created":
                         users = users.OrderByDescending(u => u.Created);
