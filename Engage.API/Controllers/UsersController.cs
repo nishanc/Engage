@@ -26,9 +26,11 @@ namespace Engage.API.Controllers
         public IMapper _mapper { get; }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers(){
-            var users = await _repo.GetUsers();
+        public async Task<IActionResult> GetUsers(UserParams userParams){
+            var users = await _repo.GetUsers(userParams);
             var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
+            Response.AddPagination(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
+
             return Ok(usersToReturn);
         }
 
